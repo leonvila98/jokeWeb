@@ -137,9 +137,9 @@ function Home(props) {
                     </Alert>
                 </Snackbar>
                 <div className='navBar'>
-                    <div className='logo'>
-                        <img src={logo} className='logo' alt="logo" />
-                        <span className='logo-font'>Joke web</span>
+                    <div className='logo-container'>
+                        {/* <img src={logo} className='logo' alt="logo" /> */}
+                        <span className='logo-font'>Jokes</span>
                     </div>
                     <div className='links'>
                         <a className='link-menu' onClick={handleMenuClick}>My jokes</a>
