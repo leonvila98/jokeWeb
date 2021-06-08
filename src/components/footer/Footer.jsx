@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import Typography from '@material-ui/core/Typography';
 import MailIcon from '@material-ui/icons/Mail';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import LanguageIcon from '@material-ui/icons/Language';
 import './footer.css';
 const GITHUB = 'https://github.com/leonvila98';
 const LINKEDIN = 'https://www.linkedin.com/in/leonvila/';
-const EMAIL = 'leonvila98@gmail.com';
+const PORTFOLIO = 'https://portfolio-leonvila98.vercel.app/';
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +25,9 @@ const useStyles = makeStyles({
     height: "50px",
     width: "100%",
     backgroundColor:'#474d66',
+    display:'flex',
+    flexDirection:'row',
+    // justifyContent:'flex-end',
   },
   icon:{
       backgroundColor:'#474d66',
@@ -47,9 +52,18 @@ function Footer() {
             showLabels
             className={classes.root}
         >
+            <div className='developed'>
+                <Typography className={classes.typography2}>
+                    Developed by me, León Vila.
+                </Typography>
+                <Typography className={classes.typography2}>
+                    Check out my LinkedIn, Github or portfolio in the links.
+                </Typography>
+            </div>
             <div className='linksFooter'>
                 <a href={GITHUB}><BottomNavigationAction label="" icon={<GitHubIcon className={classes.icon}/>} /></a>
                 <a href={LINKEDIN}><BottomNavigationAction label="" icon={<LinkedInIcon className={classes.icon}/>} /></a>
+                <a href={PORTFOLIO}><BottomNavigationAction label="" icon={<LanguageIcon className={classes.icon}/>} /></a>
             </div>
         </BottomNavigation>
     );

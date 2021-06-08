@@ -6,8 +6,19 @@ a{
     border: none; */
 }
 .linksFooter{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:flex-end;
+    margin-right: 1%;
+}
+.developed{
+    color: #F9FAFC;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    justify-content:flex-start;
+    margin-left: 1%;
 }

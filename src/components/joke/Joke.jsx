@@ -7,7 +7,11 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Popover from '@material-ui/core/Popover';
+// import useForceUpdate from '../reRender/forceUpdate';
+
 // import getSingleJoke from '../getSingleJoke';
 
 import './joke.css';
@@ -22,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: theme.typography.fontWeightRegular,
     },
     accordion:{
-        width:'50%',
-        minWidth:'500px',
+        width:'80%',
+        minWidth:'350px',
         backgroundColor:'#474d66',
         color:'#F9FAFC',
     },
@@ -34,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Joke(props) {
+    const {expandBool, setExpandBool}=props;
     const classes = useStyles();
-    const[expand,setExpand]=useState()
 
     return (
         <div className='joke-container'>
-            <Accordion className={classes.accordion}>
+            <Accordion className={classes.accordion} defaultExpanded={false}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon className={classes.icon}/>}
                     aria-controls="panel1a-content"
