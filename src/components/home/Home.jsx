@@ -16,7 +16,6 @@ import MuiAlert from '@material-ui/lab/Alert';
 // import { makeStyles } from '@material-ui/core/styles';
 import './home.css';
 import swal from 'sweetalert';
-import Joke from '../joke/Joke';
 import Footer from '../footer/Footer'
 import logo from '../../assets/nuevLogo.png';
 
