@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     flexDirection:'row',
   },
   icon:{
+      margin:'1.5%',
       backgroundColor:'#474d66',
       color:'#F9FAFC',
   },
@@ -50,9 +51,6 @@ function Footer() {
             <div className='developed'>
                 <Typography className={classes.typography2}>
                     Developed by me, León Vila.
-                </Typography>
-                <Typography className={classes.typography2}>
-                    Check out my LinkedIn, Github or portfolio in the links.
                 </Typography>
             </div>
             <div className='linksFooter'>

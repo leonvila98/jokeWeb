@@ -57,6 +57,7 @@ const useStyles = makeStyles(() => ({
 		justifyContent: "space-between",
 	},
 	drawerContainer: {
+		backgroundColor: "#8f95b2",
 		padding: "20px 30px",
 	},
 }));
@@ -145,12 +146,13 @@ export default function Header() {
 			return (
 			<Link
 				{...{
-				component: RouterLink,
-				to: href,
-				color: "inherit",
-				style: { textDecoration: "none" },
-				key: label,
+					component: RouterLink,
+					to: href,
+					color: "inherit",
+					style: { textDecoration: "none" },
+					key: label,
 				}}
+				onClick={handleMenuClick}
 			>
 				<MenuItem>{label}</MenuItem>
 			</Link>

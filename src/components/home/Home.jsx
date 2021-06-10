@@ -99,6 +99,7 @@ function Home(props) {
     return (
         <ThemeProvider theme={theme}>
             <div className='home-container'>
+                <Header/>
                 <Snackbar 
                     anchorOrigin={{
                         vertical: 'top',
@@ -112,7 +113,6 @@ function Home(props) {
                         NSFW mode activated !
                     </Alert>
                 </Snackbar>
-                <Header/>
                 <div className='home-controls'>
                     <div className='switch-nsfw'>
                         <Switch
