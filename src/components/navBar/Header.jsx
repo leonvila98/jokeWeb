@@ -53,11 +53,12 @@ const useStyles = makeStyles(() => ({
 		marginLeft: "38px",
 	},
 	toolbar: {
+		// backgroundColor: "#8f95b2",
 		display: "flex",
 		justifyContent: "space-between",
 	},
 	drawerContainer: {
-		backgroundColor: "#8f95b2",
+		// backgroundColor: "#8f95b2",
 		padding: "20px 30px",
 	},
 }));
