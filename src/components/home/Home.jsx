@@ -13,11 +13,9 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-// import { makeStyles } from '@material-ui/core/styles';
 import './home.css';
-import swal from 'sweetalert';
-import Footer from '../footer/Footer'
-import logo from '../../assets/nuevLogo.png';
+import Footer from '../footer/Footer';
+import Header from '../navBar/Header';
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -37,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1),
     },
     button:{
+        margin:'5px',
         textTransform: 'none',
     },
     icon:{
@@ -60,7 +59,6 @@ function Home(props) {
     const[nsfw,setNsfw] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [openAlert, setOpenAlert] = React.useState(false);
-    const [openAlert2, setOpenAlert2] = React.useState(false);
 
     useEffect(()=>{
         if(nsfw){
@@ -94,13 +92,6 @@ function Home(props) {
     const handleAlertClose = (event, reason) => {
         setOpenAlert(false);
     };
-    
-    const handleMenuClick = (e) =>{
-        setOpenAlert2(openAlert2?false:true);
-    }
-    const handleAlertClose2 = (event, reason) => {
-        setOpenAlert2(false);
-    };
 
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
@@ -121,31 +112,7 @@ function Home(props) {
                         NSFW mode activated !
                     </Alert>
                 </Snackbar>
-                
-                <Snackbar 
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                    }} 
-                    open={openAlert2} 
-                    autoHideDuration={4000} 
-                    onClose={handleAlertClose2}
-                >
-                    <Alert onClose={handleAlertClose2} severity="info">
-                        Available soon
-                    </Alert>
-                </Snackbar>
-                <div className='navBar'>
-                    <div className='logo-container'>
-                        {/* <img src={logo} className='logo' alt="logo" /> */}
-                        <span className='logo-font'>Jokes</span>
-                    </div>
-                    <div className='links'>
-                        <a className='link-menu' onClick={handleMenuClick}>My jokes</a>
-                        <a className='link-menu' onClick={handleMenuClick}>Register</a>
-                        <a className='link-menu' onClick={handleMenuClick}>Login</a>
-                    </div>
-                </div>
+                <Header/>
                 <div className='home-controls'>
                     <div className='switch-nsfw'>
                         <Switch

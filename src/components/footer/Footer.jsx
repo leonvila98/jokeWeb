@@ -1,11 +1,8 @@
 import React from 'react';
-import { Redirect } from "react-router-dom";
-import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Typography from '@material-ui/core/Typography';
-import MailIcon from '@material-ui/icons/Mail';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -16,8 +13,7 @@ const PORTFOLIO = 'https://portfolio-leonvila98.vercel.app/';
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
-    // textAlign: "center",
+    // width: 500,
     padding: "20px",
     position: "fixed",
     left: "0",
@@ -27,7 +23,6 @@ const useStyles = makeStyles({
     backgroundColor:'#474d66',
     display:'flex',
     flexDirection:'row',
-    // justifyContent:'flex-end',
   },
   icon:{
       backgroundColor:'#474d66',
