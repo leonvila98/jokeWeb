@@ -16,6 +16,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 import './home.css';
 import Footer from '../footer/Footer';
 import Header from '../navBar/Header';
+import RegisterForm from '../registerForm/RegisterForm';
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon:{
         marginTop:'45px',
-    }
+    },
 }));
 
 const theme = createMuiTheme({
@@ -108,11 +109,14 @@ function Home(props) {
                     open={openAlert} 
                     autoHideDuration={6000} 
                     onClose={handleAlertClose}
-                >
+                    >
                     <Alert onClose={handleAlertClose} severity="error">
                         NSFW mode activated !
                     </Alert>
                 </Snackbar>
+                {/* <div className='register-form'>
+                    <RegisterForm/>
+                </div> */}
                 <div className='home-controls'>
                     <div className='switch-nsfw'>
                         <Switch
@@ -153,6 +157,7 @@ function Home(props) {
                         </Typography>
                     </Popover>
                 </div>
+                
                 <div className='footer'>
                     <Footer/>   
                 </div>

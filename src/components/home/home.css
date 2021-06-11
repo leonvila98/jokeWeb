@@ -105,4 +105,8 @@ a{
     justify-items: flex-end;
 }
 
+.register-form{
+    margin-top: 100px;
+}
+
 /* @media all */

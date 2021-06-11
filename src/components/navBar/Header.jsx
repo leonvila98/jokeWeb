@@ -23,11 +23,11 @@ function Alert(props) {
 const headersData = [
 	{
 		label: "Register",
-		href: "/account",
+		href: "/register",
 	},
 	{
 		label: "Log in",
-		href: "/logout",
+		href: "/login",
 	},
 ];
 
