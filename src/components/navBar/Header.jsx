@@ -47,7 +47,7 @@ const useStyles = makeStyles(() => ({
 		textAlign: "left",
 	},
 	menuButton: {
-		fontFamily: "Open Sans, sans-serif",
+		fontFamily: 'Roboto, sans-serif',
 		fontWeight: 700,
 		size: "18px",
 		marginLeft: "38px",
