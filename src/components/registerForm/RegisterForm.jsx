@@ -113,12 +113,15 @@ function RegisterForm(){
             <TextField
                 id='password-input'
                 name='password'
-                // className={classes.textField}
-                label='Contraseña'
+                label='Password'
                 variant='outlined'
                 value={input.password}
-                onChange={handleInputChange}
                 // className={classes.textField}
+                onChange={handleInputChange}
+                {...(errors.password && {
+                    error: errors.password,
+                    helperText: 'Password inválida',
+                })}
             />
             <Button
                 onClick={handleSubmit}
