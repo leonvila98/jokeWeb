@@ -60,6 +60,7 @@ function Home(props) {
     const[nsfw,setNsfw] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [openAlert, setOpenAlert] = React.useState(false);
+    const [openForm, setOpenForm] = React.useState(false);
 
     useEffect(()=>{
         if(nsfw){
@@ -93,6 +94,11 @@ function Home(props) {
     const handleAlertClose = (event, reason) => {
         setOpenAlert(false);
     };
+    const handleOpenForm = (event, reason) => {
+        setOpenForm(true);
+    };
+
+
 
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
@@ -115,7 +121,7 @@ function Home(props) {
                     </Alert>
                 </Snackbar>
                 {/* <div className='register-form'>
-                    <RegisterForm/>
+                    <RegisterForm openForm={openForm} setOpenForm={setOpenForm}/>
                 </div> */}
                 <div className='home-controls'>
                     <div className='switch-nsfw'>
@@ -156,6 +162,11 @@ function Home(props) {
                             {props.normalJoke.data?props.normalJoke.data.delivery:''}
                         </Typography>
                     </Popover>
+                    <Button aria-describedby={id} className={classes.button} size="large" variant="contained" color="primary" onClick={handleOpenForm}>
+                        <Typography className={classes.typography2}>
+                            Abrir Form
+                        </Typography>
+                    </Button>
                 </div>
                 
                 <div className='footer'>
