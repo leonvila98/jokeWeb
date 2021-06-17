@@ -106,7 +106,7 @@ function Home(props) {
     return (
         <ThemeProvider theme={theme}>
             <div className='home-container'>
-                <Header/>
+                <Header setOpenForm={setOpenForm}/>
                 <Snackbar 
                     anchorOrigin={{
                         vertical: 'top',

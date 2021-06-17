@@ -28,7 +28,6 @@ const headersData = [
 	{
 		label: "Log in",
 		href: "/login",
-		onClick: ""
 	},
 ];
 
@@ -64,7 +63,8 @@ const useStyles = makeStyles(() => ({
 	},
 }));
   
-export default function Header() {
+export default function Header(props) {
+	const{setOpenForm} = props;
     const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
     const [openAlert2, setOpenAlert2] = React.useState(false);
   
@@ -97,12 +97,44 @@ export default function Header() {
     const handleAlertClose2 = (event, reason) => {
         setOpenAlert2(false);
     };
+    const handleRegister = (event, reason) => {
+        setOpenForm(true);
+    };
+    const handleLogin = (event, reason) => {
+        setOpenForm(true);
+    };
+
   
     const displayDesktop = () => {
       return (
 		<Toolbar className={toolbar}>
 			{femmecubatorLogo}
-			<div>{getMenuButtons()}</div>
+			<div>
+				<Button
+						{...{
+							key: 'Register',
+							color: "inherit",
+							// to: href,
+							component: RouterLink,
+							className: menuButton,
+						}}
+						onClick={handleRegister}
+					>
+						Register
+				</Button>
+				<Button
+						{...{
+							key: 'login',
+							color: "inherit",
+							// to: href,
+							component: RouterLink,
+							className: menuButton,
+						}}
+						onClick={handleLogin}
+					>
+						Log In
+				</Button>
+			</div>
 		</Toolbar>
       );
     };
@@ -135,30 +167,30 @@ export default function Header() {
 				}}
 			>
 				<div className={drawerContainer}>
-					{/* <Link
+					<Link
 						{...{
 							component: RouterLink,
-							// to: "",
+							// to: href,
 							color: "inherit",
 							style: { textDecoration: "none" },
-							key: 'register',
+							key: 'Register',
 						}}
 						onClick={handleRegister}
 					>
 						<MenuItem>Register</MenuItem>
-					</Link>	
+					</Link>
 					<Link
 						{...{
 							component: RouterLink,
-							// to: "",
+							// to: href,
 							color: "inherit",
 							style: { textDecoration: "none" },
-							key: 'login',
+							key: 'Login',
 						}}
 						onClick={handleLogin}
 					>
-						<MenuItem>Login</MenuItem>
-					</Link>	 */}
+						<MenuItem>Log In</MenuItem>
+					</Link>
 				</div>
 			</Drawer>
 	
@@ -172,25 +204,6 @@ export default function Header() {
 			<span className='logo-font'>Jokes</span>
 		</div>
     );
-  
-    const getMenuButtons = () => {
-		return headersData.map(({ label, href }) => {
-			return (
-				<Button
-					{...{
-						key: label,
-						color: "inherit",
-						to: href,
-						component: RouterLink,
-						className: menuButton,
-					}}
-					onClick={handleMenuClick}
-				>
-					{label}
-			</Button>
-			);
-		});
-    };
   
     return (
 		<header>
