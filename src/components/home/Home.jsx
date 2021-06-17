@@ -120,9 +120,9 @@ function Home(props) {
                         NSFW mode activated !
                     </Alert>
                 </Snackbar>
-                {/* <div className='register-form'>
+                <div className='register-form'>
                     <RegisterForm openForm={openForm} setOpenForm={setOpenForm}/>
-                </div> */}
+                </div>
                 <div className='home-controls'>
                     <div className='switch-nsfw'>
                         <Switch

@@ -28,6 +28,7 @@ const headersData = [
 	{
 		label: "Log in",
 		href: "/login",
+		onClick: ""
 	},
 ];
 
@@ -96,7 +97,6 @@ export default function Header() {
     const handleAlertClose2 = (event, reason) => {
         setOpenAlert2(false);
     };
-    
   
     const displayDesktop = () => {
       return (
@@ -134,32 +134,38 @@ export default function Header() {
 					onClose: handleDrawerClose,
 				}}
 			>
-				<div className={drawerContainer}>{getDrawerChoices()}</div>
+				<div className={drawerContainer}>
+					{/* <Link
+						{...{
+							component: RouterLink,
+							// to: "",
+							color: "inherit",
+							style: { textDecoration: "none" },
+							key: 'register',
+						}}
+						onClick={handleRegister}
+					>
+						<MenuItem>Register</MenuItem>
+					</Link>	
+					<Link
+						{...{
+							component: RouterLink,
+							// to: "",
+							color: "inherit",
+							style: { textDecoration: "none" },
+							key: 'login',
+						}}
+						onClick={handleLogin}
+					>
+						<MenuItem>Login</MenuItem>
+					</Link>	 */}
+				</div>
 			</Drawer>
 	
 			<div>{femmecubatorLogo}</div>
 			</Toolbar>
 		);
 	};
-  
-    const getDrawerChoices = () => {
-		return headersData.map(({ label, href }) => {
-			return (
-			<Link
-				{...{
-					component: RouterLink,
-					to: href,
-					color: "inherit",
-					style: { textDecoration: "none" },
-					key: label,
-				}}
-				onClick={handleMenuClick}
-			>
-				<MenuItem>{label}</MenuItem>
-			</Link>
-			);
-		});
-    };
   
     const femmecubatorLogo = (
 		<div className='logo-container'>
