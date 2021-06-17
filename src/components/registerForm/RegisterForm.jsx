@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
     },
     icon:{
         marginTop:'45px',
+    },
+    dialog:{
+        backgroundColor:'#474d66'
     }
 }));
 
@@ -51,6 +54,8 @@ const theme = createMuiTheme({
 });
 
 function RegisterForm(props){
+
+    const classes = useStyles();
 
     let [input, setInput] = useState({
         email: '',

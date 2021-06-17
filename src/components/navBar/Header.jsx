@@ -118,7 +118,7 @@ export default function Header(props) {
 							component: RouterLink,
 							className: menuButton,
 						}}
-						onClick={handleRegister}
+						onClick={handleMenuClick}
 					>
 						Register
 				</Button>
@@ -130,7 +130,7 @@ export default function Header(props) {
 							component: RouterLink,
 							className: menuButton,
 						}}
-						onClick={handleLogin}
+						onClick={handleMenuClick}
 					>
 						Log In
 				</Button>
