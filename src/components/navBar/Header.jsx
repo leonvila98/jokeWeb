@@ -104,7 +104,6 @@ export default function Header(props) {
         setOpenForm(true);
     };
 
-  
     const displayDesktop = () => {
       return (
 		<Toolbar className={toolbar}>

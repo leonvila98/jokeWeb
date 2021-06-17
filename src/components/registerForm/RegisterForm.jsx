@@ -39,6 +39,14 @@ const useStyles = makeStyles((theme) => ({
     },
     dialog:{
         backgroundColor:'#474d66'
+    },
+    dialogContent:{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    textField:{
+        width:'100%'
     }
 }));
 
@@ -104,46 +112,49 @@ function RegisterForm(props){
   
     return (
         <div>
-            <Dialog open={openForm} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+            <Dialog open={openForm} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth='xs'>
+                <DialogTitle id="form-dialog-title">Register</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.
+                        You will be able to save and suggest jokes.
                     </DialogContentText>
-                    <TextField
-                        id='email-input'
-                        name='email'
-                        label='Email'
-                        variant='outlined'
-                        value={input.email}
-                        // className={classes.textField}
-                        onChange={handleInputChange}
-                        {...(errors.email && {
-                            error: errors.email,
-                            helperText: 'Email inválido',
-                        })}
-                    />
-                    <TextField
-                        id='password-input'
-                        name='password'
-                        label='Password'
-                        variant='outlined'
-                        value={input.password}
-                        // className={classes.textField}
-                        onChange={handleInputChange}
-                        {...(errors.password && {
-                            error: errors.password,
-                            helperText: 'Password inválida',
-                        })}
-                    />
+                    <DialogContent className={classes.dialogContent} fullWidth='true'>
+                        <TextField
+                            id='email-input'
+                            name='email'
+                            label='Email'
+                            variant='outlined'
+                            value={input.email}
+                            className={classes.textField}
+                            onChange={handleInputChange}
+                            {...(errors.email && {
+                                error: errors.email,
+                                helperText: 'Email inválido',
+                            })}
+                        />
+                    </DialogContent>
+                    <DialogContent className={classes.dialogContent} fullWidth='true'>
+                        <TextField
+                            id='password-input'
+                            name='password'
+                            label='Password'
+                            variant='outlined'
+                            value={input.password}
+                            className={classes.textField}
+                            onChange={handleInputChange}
+                            {...(errors.password && {
+                                error: errors.password,
+                                helperText: 'Password inválida',
+                            })}
+                        />
+                    </DialogContent>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
                     <Button onClick={handleClose} color="primary">
-                        Subscribe
+                        Register
                     </Button>
                 </DialogActions>
             </Dialog>
